@@ -1,43 +1,43 @@
 {
-    "name": "pure-json-api",
-    "description": "Help you maintain a single endpoint api with dynamic handlers.",
-    "author": "Shlomi haver <havershlomi@gmail.com>",
-    "main": "index.js",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/havershlomi/pureApi.git"
-    },
-    "dependencies": {
-        "extend": "2.0.0",
-        "require-dir": "^0.3.0"
-
-    },
-    "engines": {
-        "node": ">0.10.0"
-    },
-    "bugs": {
-        "url": "https://github.com/havershlomi/pureApi/issues"
-    },
-    "homepage": "https://github.com/havershlomi/pureApi",
-    "devDependencies": {
-        "body-parser": "~1.13.2",
-        "express": "^4.11.2",
-        "nock": "^2.13.0"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "request",
-        "error",
-        "errors",
-        "errorHandler"
-    ],
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
-        }
-    ]
+  "name": "pure-json-api",
+  "description": "Help you maintain a single endpoint api with dynamic handlers.",
+  "author": "Shlomi haver <havershlomi@gmail.com>",
+  "main": "index.js",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/havershlomi/pureApi.git"
+  },
+  "dependencies": {
+    "extend": "2.0.0",
+    "require-dir": "^0.3.0"
+  },
+  "engines": {
+    "node": ">0.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/havershlomi/pureApi/issues"
+  },
+  "homepage": "https://github.com/havershlomi/pureApi",
+  "devDependencies": {
+    "body-parser": "~1.13.2",
+    "chai": "^3.3.0",
+    "express": "^4.11.2",
+    "mocha": "^2.3.3",
+    "request": "^2.64.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "pureApi",
+    "rest",
+    "json"
+  ],
+  "licenses": [
+    {
+      "license": "SEE LICENSE IN <LICENSE>"
+    }
+  ]
 }

@@ -21,7 +21,7 @@ var defaults = {
 };
 
 exports.endPoint = function (options) {
-    extend(true, defaults, options);
+    options = extend(true, defaults, options);
     var handlers = requireDir(options.handlersDir);
 
     return function (req, res, next) {
@@ -37,7 +37,7 @@ exports.endPoint = function (options) {
         } else if (handlers[data[dataType]][data[actionStr]] === undefined || !(handlers[data.data_type][data.action_str] instanceof Function)) {
             errorLog.insert(new CustomError(400, "Invalid_data", CustomError.ACTION_NOT_EXIST, "Action is not exist"));
         }
-        if (errorLog.log_list.length === 1) return res.send(new ApiResponse("FAILED", "FORMAT", errorLog));
+        if (errorLog.log_list.length === 1) return res.send(new ApiResponse("FAILED", "FORMAT", errorLog.log_list));
 
         handlers[data[dataType]][data[actionStr]](req, res, function (err, apiResponse) {
             if (err) next(err);

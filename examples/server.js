@@ -16,8 +16,8 @@ var options = {
             && (data["request_map"] !== undefined && typeof data["request_map"] === "object")
             && (data["trans_map"] !== undefined && typeof data["trans_map"] === "object");
     },
-    dataType: "",
-    actionStr: ""
+    dataType: undefined,
+    actionStr: undefined
 };
 
 app.post("/test", pureApi.endPoint(options));
