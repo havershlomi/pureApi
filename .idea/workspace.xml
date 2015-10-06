@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b626522-4d4e-40eb-a9a4-821ed6722ca3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="pureApi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,8 +51,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.0357144" vertical-offset="0" max-vertical-offset="1666">
-              <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.3705357" vertical-offset="497" max-vertical-offset="1683">
+              <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -451,8 +450,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0357144" vertical-offset="0" max-vertical-offset="1666">
-          <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.3705357" vertical-offset="497" max-vertical-offset="1683">
+          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
           <folding />
         </state>
       </provider>

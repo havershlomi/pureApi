@@ -37,7 +37,7 @@ without the need of custom routing to each request.
       ...
     next(null,responseObj);
     //next first param is an error object
-    //and the second obj is the response that will be send to the client
+    //and the second obj is the response that will be sent to the client
  }
  ```
 > and will preform the appropriate actions and return the appropriate response using res.send function.
@@ -81,12 +81,13 @@ exports.retrieve = function (req, res, next) {
 > In order to execute this action I am sending to the endpoint this object:
 
 ```javascript
- { action_str    : "retrieve",  
-     data_type     : "person",
+ { action_str    : "retrieve",  //this verb is case sensitive and should be the same as the function name
+     data_type     : "person",  //this verb is case sensitive and should be the same as the handler file name
      log_list      : [ /* application messages   */ ],
      request_map   : { /* request parameters     */ },
      trans_map     : { /* transaction meta-data  */ }
  }
  ```
+ >
 
 
