@@ -33,11 +33,13 @@
     "api",
     "pureApi",
     "rest",
+    "rest api",
+    "json api",
     "json"
   ],
-  "licenses": [
-    {
-      "license": "SEE LICENSE IN <LICENSE>"
-    }
-  ]
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "license": "SEE LICENSE IN <LICENSE>"
 }
