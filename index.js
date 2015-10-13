@@ -13,7 +13,7 @@ exports.ApiResponse = ApiResponse;
 
 var defaults = {
     handlersDir: "/handlers",
-    validateFunc: function (data) {
+    validateReqFunc: function (req) {
         return true;
     },
     dataType: "data_type",
@@ -30,7 +30,7 @@ exports.endPoint = function (options) {
             actionStr = options.actionStr;
 
         var data = req.body || {};
-        if (!options.validateFunc(data)) {
+        if (!options.validateReqFunc(req)) {
             errorLog.insert(new CustomError(400, "Invalid_data", CustomError.NOT_IN_THE_RIGTH_FORMAT, "The request is not in the right format"));
         } else if (handlers[data[dataType]] === undefined) {
             errorLog.insert(new CustomError(400, "Invalid_data", CustomError.MODEL_TYPE_NOT_EXIST, "Model is not exist"));

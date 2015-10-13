@@ -13,7 +13,8 @@ without the need of custom routing to each request.
 
  var options = {
      handlersDir: "./myHandlersDir",
-     validateFunc: function (data) {
+     validateReqFunc: function (req) {
+         var data = req.body || {};
          return (data["action_str"] !== undefined && typeof data["action_str"] === "string")
              && (data["data_type"] !== undefined && typeof data["data_type"] === "string")
              && (data["log_list"] !== undefined && typeof data["log_list"] === "object")
@@ -50,7 +51,7 @@ without the need of custom routing to each request.
 ```javascript
 var defaults = {
     handlersDir: "/handlers",
-    validateFunc: function (data) {
+    validateReqFunc: function (req) {
         return true;
     },
     dataType: "data_type",
@@ -61,8 +62,9 @@ var defaults = {
 ### handlersDir
 > A path to the directory which contains the custom handlers.  
 
-### validateFunc 
-> A custom function which get a data object that return true if valid and false otherwise. 
+### validateReqFunc 
+> A custom function which get the request object and allows you to check if the request is valid.
+> if true continue with the process else throws an error. 
    
 ### dataType
 > Supple here the name of the field in the data object which corresponds to the handler file name.
