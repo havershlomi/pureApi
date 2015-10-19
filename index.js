@@ -40,7 +40,7 @@ exports.endPoint = function (options) {
         if (errorLog.log_list.length === 1) return res.send(new ApiResponse("FAILED", "FORMAT", errorLog.log_list));
 
         handlers[data[dataType]][data[actionStr]](req, res, function (err, apiResponse) {
-            if (err) next(err);
+            if (err) return next(err);
             return res.send(apiResponse);
         });
     }
