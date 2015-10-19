@@ -3,7 +3,7 @@
   "description": "Help you maintain a single endpoint api with dynamic handlers.",
   "author": "Shlomi haver <havershlomi@gmail.com>",
   "main": "index.js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "repository": {
     "type": "git",
     "url": "https://github.com/havershlomi/pureApi.git"
