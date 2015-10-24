@@ -22,7 +22,8 @@ without the need of custom routing to each request.
              && (data["trans_map"] !== undefined && typeof data["trans_map"] === "object");
      },
      dataType: "",
-     actionStr: ""
+     actionStr: "",
+     debug: true
  };
  
  app.post("/myEndpoint", pureApi.endPoint(options));
@@ -55,7 +56,8 @@ var defaults = {
         return true;
     },
     dataType: "data_type",
-    actionStr: "action_str"
+    actionStr: "action_str",
+    debug: false
 };
 ```
 
@@ -67,10 +69,14 @@ var defaults = {
 > if true continue with the process else throws an error. 
    
 ### dataType
-> Supple here the name of the field in the data object which corresponds to the handler file name.
+> Supply here the name of the field in the data object which corresponds to the handler file name.
 
 ### actionStr
-> Supple here the name of the field in the data object which corresponds to the specific function within the handler. 
+> Supply here the name of the field in the data object which corresponds to the specific function within the handler. 
+
+### debug
+> A flag if set to true will show log of request and response messages, (default to false). 
+
 
 ## Handler example
 > This handler file is located in my handlers dir under the name person.js.
@@ -91,5 +97,6 @@ exports.retrieve = function (req, res, next) {
  }
  ```
  >
+
 
 

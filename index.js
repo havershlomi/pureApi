@@ -15,7 +15,8 @@ var defaults = {
         return true;
     },
     dataType: "data_type",
-    actionStr: "action_str"
+    actionStr: "action_str",
+    debug: false
 };
 
 exports.endPoint = function (options) {
@@ -28,6 +29,8 @@ exports.endPoint = function (options) {
             actionStr = options.actionStr;
 
         var data = req.body || {};
+        options.debug && console.log("Request data:", data, "\n");
+
         if (!options.validateReqFunc(req)) {
             apiResponse.addLog(new CustomError(400, "Invalid_data", CustomError.NOT_IN_THE_RIGTH_FORMAT, "The request is not in the right format"));
         } else if (handlers[data[dataType]] === undefined) {
@@ -35,10 +38,16 @@ exports.endPoint = function (options) {
         } else if (handlers[data[dataType]][data[actionStr]] === undefined || !(handlers[data.data_type][data.action_str] instanceof Function)) {
             apiResponse.addLog(new CustomError(400, "Invalid_data", CustomError.ACTION_NOT_EXIST, "Action is not exist"));
         }
-        if (apiResponse.log_list.length === 1) return res.send(apiResponse.updateAndGet("FAILED", "FORMAT"));
+        apiResponse = apiResponse.updateAndGet("FAILED", "FORMAT");
+        options.debug && console.log("Response data:", apiResponse, "\n");
+        if (apiResponse.log_list.length === 1) return res.send(apiResponse);
 
         handlers[data[dataType]][data[actionStr]](req, res, function (err, apiResponse) {
-            if (err) return next(err);
+            if (err) {
+                options.debug && console.log("Error:", err, "\n");
+                return next(err);
+            }
+            options.debug && console.log("Response data:", apiResponse, "\n");
             return res.send(apiResponse);
         });
     }

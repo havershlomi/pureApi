@@ -8,6 +8,7 @@ console.log("Server started: http://localhost:1337");
 app.listen(1337);
 
 var options = {
+    debug: true,
     handlersDir: "./examples/handlers",
     validateReqFunc: function (req) {
         var data = req.body || {};
