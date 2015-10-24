@@ -39,8 +39,10 @@ exports.endPoint = function (options) {
             apiResponse.addLog(new CustomError(400, "Invalid_data", CustomError.ACTION_NOT_EXIST, "Action is not exist"));
         }
         apiResponse = apiResponse.updateAndGet("FAILED", "FORMAT");
-        options.debug && console.log("Response data:", apiResponse, "\n");
-        if (apiResponse.log_list.length === 1) return res.send(apiResponse);
+        if (apiResponse.log_list.length === 1) {
+            options.debug && console.log("Response data:", apiResponse, "\n");
+            return res.send(apiResponse);
+        }
 
         handlers[data[dataType]][data[actionStr]](req, res, function (err, apiResponse) {
             if (err) {
